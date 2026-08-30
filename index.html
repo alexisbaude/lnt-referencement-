@@ -3,289 +3,251 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LiquidNation Team (LNT) — Structure Esports & Gaming</title>
+    <title>LiquidNation Team (LNT) | Structure Esport & Création de Contenu</title>
+    <meta name="description" content="Site officiel de la LiquidNation Team (LNT). Retrouvez l'actualité de nos équipes Brawl Stars, Stumble Guys, Fortnite, Fall Guys et nos derniers contenus.">
     
-    <!-- Validation Google Search Console -->
-    <meta name="google-site-verification" content="oI-ps9cP3635cz9htY7eXpNhq-yvgnDO50q6R4lld_g" />
-
-    <meta name="description" content="Site officiel de la LiquidNation Team (LNT). Structure esports et création de contenu sur Brawl Stars et Stumble Guys, managée par la Focus Team (Alexis).">
-    <meta name="keywords" content="LiquidNation Team, LNT, Focus Team, Brawl Stars, Stumble Guys, Alexis, esports, gaming, Twitch, TikTok, Shorts">
-    <meta name="author" content="LiquidNation Team">
-    <meta name="robots" content="index, follow">
-
-    <!-- Open Graph / Facebook & Discord -->
-    <meta property="og:title" content="LiquidNation Team (LNT) — Esports & Gaming">
-    <meta property="og:description" content="Structure Esports & Création de contenu Brawl Stars & Stumble Guys. Retrouvez nos lives, shorts et vidéos.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://liquidnationteam.netlify.app/">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="LiquidNation Team (LNT)">
-    <meta name="twitter:description" content="Structure Esports & Création de contenu Brawl Stars & Stumble Guys.">
-
-    <!-- Schema.org JSON-LD (Données structurées pour indexation IA & Google) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SportsTeam",
-      "name": "LiquidNation Team",
-      "alternateName": ["LNT", "LiquidNation"],
-      "founder": {
-        "@type": "Person",
-        "name": "Alexis",
-        "jobTitle": "Manager & Lead Focus Team"
-      },
-      "sport": "Esports",
-      "keywords": ["Brawl Stars", "Stumble Guys", "Gaming", "Shorts", "Twitch", "TikTok"],
-      "sameAs": [
-        "https://www.youtube.com/@LiquidNationTeam_off",
-        "https://www.youtube.com/@lnt-shorts_off",
-        "https://www.twitch.tv/liquidnationteam",
-        "https://www.tiktok.com/@liquidnationteam",
-        "https://linktr.ee/codeliquidalex"
-      ]
-    }
-    </script>
+    <!-- Design & Polices -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
-            --bg: #0d1117;
-            --card-bg: #161b22;
-            --card-hover: #1c2128;
-            --accent: #58a6ff;
-            --text: #c9d1d9;
-            --text-heading: #ffffff;
-            --border: #30363d;
-            
-            /* Couleurs Marques */
-            --yt-red: #da3633;
-            --yt-blue: #388bfd;
-            --twitch-purple: #8957e5;
-            --tiktok-pink: #f78166;
-            --linktree-green: #238636;
+            --bg-color: #0d0e12;
+            --card-bg: #161822;
+            --accent-purple: #8a2be2;
+            --accent-neon: #00f2fe;
+            --text-color: #f1f5f9;
+            --text-muted: #94a3b8;
         }
 
         * {
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
+            font-family: 'Rajdhani', sans-serif;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            min-height: 100vh;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* En-tête / Hero Section */
+        header {
+            background: linear-gradient(180deg, rgba(138, 43, 226, 0.2) 0%, rgba(13, 14, 18, 1) 100%);
+            padding: 4rem 1rem 2rem 1rem;
+            text-align: center;
+            border-bottom: 2px solid rgba(138, 43, 226, 0.3);
+        }
+
+        .logo-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            background: linear-gradient(90deg, #fff, var(--accent-neon));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+            font-weight: 600;
         }
 
         .container {
-            max-width: 850px;
-            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
         }
 
-        header {
-            text-align: center;
-            padding: 40px 0 30px;
-            border-bottom: 1px solid var(--border);
-        }
-
-        h1 {
-            color: var(--text-heading);
-            font-size: 2.5rem;
-            margin: 0 0 10px 0;
-            letter-spacing: -0.5px;
-        }
-
-        .subtitle {
-            color: var(--accent);
-            font-size: 1.15rem;
-            font-weight: 600;
-            margin: 0 0 8px 0;
-        }
-
-        .manager-tag {
-            font-size: 0.95rem;
-            color: #8b949e;
-            margin: 0;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 22px;
-            transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
-        }
-
-        .card:hover {
-            background-color: var(--card-hover);
-            border-color: #444c56;
-            transform: translateY(-2px);
-        }
-
-        .card h2 {
-            color: var(--text-heading);
-            margin-top: 0;
-            font-size: 1.25rem;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 10px;
+        /* Section Titre Général */
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            color: #fff;
+            margin-bottom: 1.5rem;
             display: flex;
             align-items: center;
-            gap: 8px;
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        li {
-            padding: 10px 0;
-            border-bottom: 1px solid #21262d;
-            font-size: 0.95rem;
-        }
-
-        li:last-child {
-            border-bottom: none;
-        }
-
-        .btn-group {
-            display: flex;
-            flex-direction: column;
             gap: 10px;
-            margin-top: 10px;
+            border-left: 4px solid var(--accent-purple);
+            padding-left: 10px;
         }
 
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            padding: 10px 16px;
-            border-radius: 6px;
+        /* Lecteur Vidéo YouTube */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Ratio 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            background: #000;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            margin-bottom: 3rem;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Grille des Réseaux */
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .card-link {
+            background-color: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 10px;
             text-decoration: none;
-            font-weight: 600;
+            color: var(--text-color);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .card-link:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-neon);
+            box-shadow: 0 5px 15px rgba(0, 242, 254, 0.2);
+        }
+
+        .card-link i {
+            font-size: 2rem;
+            color: var(--accent-purple);
+        }
+
+        .card-link:hover i {
+            color: var(--accent-neon);
+        }
+
+        .card-info h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.1rem;
+        }
+
+        .card-info p {
             font-size: 0.9rem;
-            transition: opacity 0.2s ease, transform 0.1s ease;
+            color: var(--text-muted);
+        }
+
+        /* Section Pôles de Jeux */
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .game-badge {
+            background-color: var(--card-bg);
+            padding: 1rem;
+            border-radius: 8px;
             text-align: center;
+            font-weight: 700;
+            border: 1px solid rgba(138, 43, 226, 0.2);
         }
 
-        .btn:hover {
-            opacity: 0.9;
-            transform: scale(1.01);
-        }
-
-        .btn-yt { background-color: var(--yt-red); }
-        .btn-shorts { background-color: var(--yt-blue); }
-        .btn-twitch { background-color: var(--twitch-purple); }
-        .btn-tiktok { background-color: var(--tiktok-pink); }
-        .btn-linktree { background-color: var(--linktree-green); }
-
-        code {
-            background-color: #21262d;
-            padding: 3px 7px;
-            border-radius: 4px;
-            color: #79c0ff;
-            font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
-            font-size: 0.88rem;
-            border: 1px solid #30363d;
-        }
-
+        /* Footer */
         footer {
             text-align: center;
-            margin-top: 50px;
-            padding-top: 25px;
-            border-top: 1px solid var(--border);
-            font-size: 0.88rem;
-            color: #8b949e;
-        }
-
-        footer a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
+            padding: 2rem;
+            background-color: #08090c;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
     </style>
 </head>
 <body>
 
-<div class="container">
     <header>
-        <h1>LiquidNation Team (LNT)</h1>
-        <p class="subtitle">Structure Esports & Création de Contenu Gaming</p>
-        <p class="manager-tag">Managed by <strong>Focus Team (Alexis)</strong></p>
+        <h1 class="logo-title">LiquidNation Team</h1>
+        <p class="tagline">Structure Esport & Création de Contenu | Focus Team</p>
     </header>
 
-    <main class="grid">
-        <!-- Carte Brawl Stars -->
-        <section class="card">
-            <h2>🏆 Pôle Compétition</h2>
-            <ul>
-                <li><strong>Brawl Stars :</strong> 16K+ Trophées (3v3 / Showdown)</li>
-                <li><strong>Mains :</strong> Buzz, Edgar, Leon</li>
-                <li><strong>Tag Joueur :</strong> <code>#2LL090PLR</code></li>
-                <li><strong>Pseudo In-Game :</strong> <code>code:liquidalex</code></li>
-            </ul>
-        </section>
+    <div class="container">
+        
+        <!-- Section Dernière Vidéo -->
+        <h2 class="section-title"><i class="fa-solid fa-play"></i> Dernière Vidéo Officielle</h2>
+        <div class="video-container">
+            <!-- Intégration du flux automatique de la chaîne YouTube LNT -->
+            <iframe 
+                src="https://www.youtube.com/embed?listType=playlist&list=UUdM-373uWThJd24B_aH9i-w" 
+                title="Dernière vidéo LiquidNation Team" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
 
-        <!-- Carte Stumble Guys -->
-        <section class="card">
-            <h2>🎮 Pôle Communautaire</h2>
-            <ul>
-                <li><strong>Stumble Guys :</strong> Parties personnalisées & Événements</li>
-                <li><strong>Format :</strong> Défis, Trolls, Protips & Highlights</li>
-            </ul>
-        </section>
+        <!-- Section Hub / Liens Officiels -->
+        <h2 class="section-title"><i class="fa-solid fa-link"></i> Rejoindre la LNT</h2>
+        <div class="links-grid">
+            
+            <a href="https://youtube.com/@liquidnationteam" target="_blank" class="card-link">
+                <i class="fa-brands fa-youtube"></i>
+                <div class="card-info">
+                    <h3>YouTube</h3>
+                    <p>Vidéos & Compétitions</p>
+                </div>
+            </a>
 
-        <!-- Carte YouTube -->
-        <section class="card">
-            <h2>📺 Chaînes YouTube</h2>
-            <div class="btn-group">
-                <a href="https://www.youtube.com/@LiquidNationTeam_off" class="btn btn-yt" target="_blank" rel="noopener noreferrer" aria-label="Voir la chaîne YouTube principale LiquidNation Team">
-                    Chaîne Principale (Vidéos/Lives)
-                </a>
-                <a href="https://www.youtube.com/@lnt-shorts_off" class="btn btn-shorts" target="_blank" rel="noopener noreferrer" aria-label="Voir la chaîne YouTube Shorts LNT">
-                    Chaîne Shorts & Clips
-                </a>
-            </div>
-        </section>
+            <a href="https://twitch.tv/liquidnationteam" target="_blank" class="card-link">
+                <i class="fa-brands fa-twitch"></i>
+                <div class="card-info">
+                    <h3>Twitch</h3>
+                    <p>Lives & Push en direct</p>
+                </div>
+            </a>
 
-        <!-- Carte Réseaux Live & Courts -->
-        <section class="card">
-            <h2>⚡️ Livestreams & Réseaux</h2>
-            <div class="btn-group">
-                <a href="https://www.twitch.tv/liquidnationteam" class="btn btn-twitch" target="_blank" rel="noopener noreferrer" aria-label="Suivre la chaîne Twitch LiquidNation Team">
-                    Twitch (Lives Directs)
-                </a>
-                <a href="https://www.tiktok.com/@liquidnationteam" class="btn btn-tiktok" target="_blank" rel="noopener noreferrer" aria-label="Suivre le compte TikTok LiquidNation Team">
-                    TikTok Official
-                </a>
-                <a href="https://linktr.ee/codeliquidalex" class="btn btn-linktree" target="_blank" rel="noopener noreferrer" aria-label="Accéder au Linktree de la LiquidNation Team">
-                    Hub Linktree
-                </a>
-            </div>
-        </section>
-    </main>
+            <a href="https://tiktok.com/@liquidnationteam" target="_blank" class="card-link">
+                <i class="fa-brands fa-tiktok"></i>
+                <div class="card-info">
+                    <h3>TikTok</h3>
+                    <p>Clips & Highlights</p>
+                </div>
+            </a>
+
+            <a href="https://linktr.ee/codeliquidalex" target="_blank" class="card-link">
+                <i class="fa-solid fa-globe"></i>
+                <div class="card-info">
+                    <h3>Linktree</h3>
+                    <p>Hub officiel & Discord</p>
+                </div>
+            </a>
+
+        </div>
+
+        <!-- Section Jeux -->
+        <h2 class="section-title"><i class="fa-solid fa-gamepad"></i> Roster & Jeux Officiels</h2>
+        <div class="games-grid">
+            <div class="game-badge">Brawl Stars</div>
+            <div class="game-badge">Stumble Guys</div>
+            <div class="game-badge">Fall Guys</div>
+            <div class="game-badge">Fortnite</div>
+        </div>
+
+    </div>
 
     <footer>
-        <p>&copy; 2026 LiquidNation Team (LNT). Tous droits réservés.</p>
-        <p>Retrouvez tous nos liens sur <a href="https://linktr.ee/codeliquidalex" target="_blank" rel="noopener noreferrer">Linktree</a>.</p>
+        <p>&copy; 2026 LiquidNation Team (LNT) - Dirigé par la Focus Team (Alexis B).</p>
     </footer>
-</div>
 
 </body>
 </html>
