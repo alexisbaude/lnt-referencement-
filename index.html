@@ -3,19 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LiquidNation Team | Official Esports & Content Hub</title>
-    <meta name="description" content="Site officiel de la LiquidNation Team (LNT). Actualités esport, effectifs Brawl Stars, Stumble Guys, Fortnite, Fall Guys et créations de contenu.">
+    <title>LiquidNation Team (LNT) | Site Officiel Esport & Content</title>
+    <meta name="description" content="Site officiel de la LiquidNation Team (LNT). Retrouvez l'actualité esport, les effectifs Brawl Stars, Stumble Guys, Fortnite, Fall Guys, le serveur Discord et le contenu vidéo.">
     
+    <!-- Polices & Icônes -->
     <link href="https://fonts.googleapis.com/css2?family=Teko:wght@600;700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
-            --bg-main: #0a0c10;
-            --bg-card: #121620;
-            --bg-card-hover: #1a202c;
-            --accent-blue: #00c8ff;
+            --bg-main: #07090e;
+            --bg-card: #0f131d;
+            --bg-card-hover: #161c2b;
+            --accent-blue: #00f2fe;
+            --accent-purple: #7928ca;
             --accent-tipeee: #ff424d;
+            --accent-discord: #5865F2;
             --text-primary: #ffffff;
             --text-secondary: #94a3b8;
             --border-color: rgba(255, 255, 255, 0.08);
@@ -34,13 +37,14 @@
             line-height: 1.6;
         }
 
+        /* Navbar responsive */
         nav {
-            background: rgba(10, 12, 16, 0.95);
-            backdrop-filter: blur(10px);
+            background: rgba(7, 9, 14, 0.95);
+            backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border-color);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
             padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
@@ -78,8 +82,9 @@
             color: var(--accent-blue);
         }
 
+        /* Hero Header */
         .hero {
-            background: radial-gradient(circle at top center, rgba(0, 200, 255, 0.15) 0%, rgba(10, 12, 16, 1) 70%);
+            background: radial-gradient(circle at top center, rgba(0, 242, 254, 0.12) 0%, rgba(7, 9, 14, 1) 75%);
             padding: 5rem 1rem 3rem;
             text-align: center;
             border-bottom: 1px solid var(--border-color);
@@ -87,7 +92,7 @@
 
         .hero h1 {
             font-family: 'Teko', sans-serif;
-            font-size: 4.5rem;
+            font-size: 4.8rem;
             line-height: 1;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -96,7 +101,7 @@
         .hero p {
             color: var(--text-secondary);
             font-size: 1.2rem;
-            max-width: 600px;
+            max-width: 650px;
             margin: 1rem auto 2rem;
         }
 
@@ -112,13 +117,13 @@
             border: 1px solid var(--border-color);
             color: var(--text-primary);
             padding: 0.75rem 1.5rem;
-            border-radius: 4px;
+            border-radius: 6px;
             text-decoration: none;
             font-weight: 600;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            transition: all 0.2s;
+            gap: 0.6rem;
+            transition: all 0.2s ease-in-out;
         }
 
         .btn-social:hover {
@@ -127,16 +132,25 @@
             transform: translateY(-2px);
         }
 
+        .btn-discord {
+            border-color: rgba(88, 101, 242, 0.4);
+            color: var(--accent-discord);
+        }
+        .btn-discord:hover {
+            border-color: var(--accent-discord);
+            background: rgba(88, 101, 242, 0.15);
+        }
+
         .btn-tipeee {
             border-color: rgba(255, 66, 77, 0.4);
             color: var(--accent-tipeee);
         }
-
         .btn-tipeee:hover {
             border-color: var(--accent-tipeee);
-            background: rgba(255, 66, 77, 0.1);
+            background: rgba(255, 66, 77, 0.15);
         }
 
+        /* Layout Main */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -166,12 +180,19 @@
             color: var(--accent-blue);
         }
 
-        .media-container {
+        /* Grille Médias & Discord */
+        .media-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .video-box {
             background: var(--bg-card);
             border-radius: 8px;
             border: 1px solid var(--border-color);
             overflow: hidden;
-            margin-bottom: 4rem;
         }
 
         .video-wrapper {
@@ -189,22 +210,51 @@
             border: 0;
         }
 
-        /* Widget Tipeee styling */
-        .tipeee-section {
+        .discord-box {
             background: var(--bg-card);
-            border: 1px solid rgba(255, 66, 77, 0.3);
             border-radius: 8px;
-            padding: 2rem;
-            margin-bottom: 4rem;
+            border: 1px solid var(--border-color);
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
         }
 
-        .tipeee-container {
-            display: flex;
-            justify-content: center;
-            margin-top: 1rem;
+        .discord-box h3 {
+            font-family: 'Teko', sans-serif;
+            font-size: 1.8rem;
+            color: var(--accent-discord);
+            margin-bottom: 0.5rem;
         }
 
+        /* Section Soutien Tipeee sur mesure */
+        .support-box {
+            background: linear-gradient(135deg, rgba(255, 66, 77, 0.1) 0%, rgba(15, 19, 29, 1) 100%);
+            border: 1px solid rgba(255, 66, 77, 0.3);
+            border-radius: 8px;
+            padding: 2.5rem;
+            margin-bottom: 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .support-info h3 {
+            font-family: 'Teko', sans-serif;
+            font-size: 2.2rem;
+            color: var(--accent-tipeee);
+        }
+
+        .support-info p {
+            color: var(--text-secondary);
+            max-width: 600px;
+        }
+
+        /* Rosters & Effectifs */
         .roster-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -215,11 +265,11 @@
         .roster-card {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
-            border-radius: 6px;
-            padding: 1.5rem;
+            border-radius: 8px;
+            padding: 1.8rem;
             position: relative;
             overflow: hidden;
-            transition: border-color 0.2s;
+            transition: all 0.2s;
         }
 
         .roster-card::before {
@@ -234,72 +284,76 @@
 
         .roster-card:hover {
             border-color: var(--accent-blue);
+            transform: translateY(-3px);
         }
 
         .roster-card h3 {
             font-family: 'Teko', sans-serif;
-            font-size: 1.8rem;
+            font-size: 2rem;
             text-transform: uppercase;
         }
 
         .roster-card p {
             color: var(--text-secondary);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             margin-top: 0.5rem;
         }
 
-        .article-box {
+        .roster-card code {
+            background: rgba(0, 242, 254, 0.1);
+            color: var(--accent-blue);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+
+        /* Section Wiki / Présentation Détaillée */
+        .wiki-box {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 8px;
             padding: 2.5rem;
+            margin-bottom: 4rem;
         }
 
-        .article-box h3 {
+        .wiki-box h3 {
             font-family: 'Teko', sans-serif;
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: var(--accent-blue);
             margin: 1.5rem 0 0.5rem;
         }
 
-        .article-box h3:first-child {
+        .wiki-box h3:first-child {
             margin-top: 0;
         }
 
-        .article-box p, .article-box ul {
+        .wiki-box p, .wiki-box ul {
             color: var(--text-secondary);
             margin-bottom: 1rem;
         }
 
-        .article-box ul {
+        .wiki-box ul {
             padding-left: 1.2rem;
         }
 
-        .article-box li {
-            margin-bottom: 0.4rem;
+        .wiki-box li {
+            margin-bottom: 0.5rem;
         }
 
-        .badge {
-            background: rgba(0, 200, 255, 0.1);
-            color: var(--accent-blue);
-            padding: 0.2rem 0.6rem;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-
+        /* Footer */
         footer {
             border-top: 1px solid var(--border-color);
-            background: #060709;
+            background: #040508;
             padding: 3rem 1.5rem;
             text-align: center;
             color: var(--text-secondary);
             font-size: 0.9rem;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
+            .media-grid { grid-template-columns: 1fr; }
             .nav-links { display: none; }
-            .hero h1 { font-size: 3rem; }
+            .hero h1 { font-size: 3.5rem; }
         }
     </style>
 </head>
@@ -308,61 +362,77 @@
     <nav>
         <div class="nav-brand">LiquidNation Team</div>
         <ul class="nav-links">
-            <li><a href="#media">Médias</a></li>
+            <li><a href="#media">Contenu & Discord</a></li>
+            <li><a href="#rosters">Divisions Esport</a></li>
             <li><a href="#tipeee">Soutenir</a></li>
-            <li><a href="#rosters">Rosters</a></li>
             <li><a href="#about">À Propos</a></li>
-            <li><a href="#links">Réseaux</a></li>
         </ul>
     </nav>
 
     <header class="hero">
         <h1>LiquidNation Team</h1>
-        <p>Structure e-sport française & pôle de création de contenu multi-plateformes sous le management de la Focus Team.</p>
+        <p>Structure e-sport française & pôle de création de contenu multi-plateformes sous la direction de la Focus Team (Alexis B).</p>
         
-        <div class="social-bar" id="links">
+        <div class="social-bar">
             <a href="https://youtube.com/@liquidnationteam" target="_blank" class="btn-social"><i class="fa-brands fa-youtube"></i> YouTube</a>
             <a href="https://twitch.tv/liquidnationteam" target="_blank" class="btn-social"><i class="fa-brands fa-twitch"></i> Twitch</a>
             <a href="https://tiktok.com/@liquidnationteam" target="_blank" class="btn-social"><i class="fa-brands fa-tiktok"></i> TikTok</a>
+            <a href="https://discord.gg/BNrDBvtVwe" target="_blank" class="btn-social btn-discord"><i class="fa-brands fa-discord"></i> Discord</a>
             <a href="https://fr.tipeee.com/liquidnation-team" target="_blank" class="btn-social btn-tipeee"><i class="fa-solid fa-heart"></i> Tipeee</a>
-            <a href="https://linktr.ee/codeliquidalex" target="_blank" class="btn-social"><i class="fa-solid fa-link"></i> Linktree / Discord</a>
+            <a href="https://linktr.ee/codeliquidalex" target="_blank" class="btn-social"><i class="fa-solid fa-link"></i> Linktree</a>
         </div>
     </header>
 
     <main class="container">
 
-        <!-- Lecteur Médias -->
+        <!-- Grille Médias & Discord -->
         <section id="media">
             <div class="section-header">
-                <h2 class="section-title"><i class="fa-solid fa-play"></i> Dernier Contenu</h2>
-                <span class="badge">YouTube Officiel</span>
+                <h2 class="section-title"><i class="fa-solid fa-play"></i> Dernier Contenu & Communauté</h2>
             </div>
-            <div class="media-container">
-                <div class="video-wrapper">
-                    <iframe 
-                        src="https://www.youtube.com/embed?listType=user_uploads&list=liquidnationteam" 
-                        title="LiquidNation Team - Dernier contenu" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
+            <div class="media-grid">
+                
+                <!-- Lecteur Vidéo Directement Intégré -->
+                <div class="video-box">
+                    <div class="video-wrapper">
+                        <!-- Remplace l'ID si tu veux cibler une vidéo précise -->
+                        <iframe 
+                            src="https://www.youtube.com/embed?listType=playlist&list=PL1025D0219416D411" 
+                            title="Vidéo Officielle LiquidNation Team" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
                 </div>
+
+                <!-- Widget Discord Direct -->
+                <div class="discord-box">
+                    <h3><i class="fa-brands fa-discord"></i> Serveur Discord</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.9rem;">Rejoins les membres actifs de la LNT, participe aux Customs et échange avec la Focus Team !</p>
+                    <a href="https://discord.gg/BNrDBvtVwe" target="_blank" class="btn-social btn-discord" style="width: 100%; justify-content: center;">
+                        <i class="fa-solid fa-right-to-bracket"></i> Rejoindre le Discord
+                    </a>
+                </div>
+
             </div>
         </section>
 
-        <!-- Widget Tipeee Officiel -->
+        <!-- Soutien Tipeee Intégré sur Mesure -->
         <section id="tipeee">
-            <div class="section-header">
-                <h2 class="section-title" style="color: var(--accent-tipeee);"><i class="fa-solid fa-hand-holding-dollar"></i> Soutenir le Projet LNT</h2>
-            </div>
-            <div class="tipeee-section">
-                <p style="color: var(--text-secondary); margin-bottom: 1rem;">Aidez la LiquidNation Team à développer ses projets esport et à produire du contenu de meilleure qualité !</p>
-                <div class="tipeee-container">
-                    <a href="https://fr.tipeee.com/liquidnation-team" class="tipeee-project-cart-iframe" data-orientation="line" data-rewards="1">Soutenez LiquidNation Team sur Tipeee</a>
+            <div class="support-box">
+                <div class="support-info">
+                    <h3>Soutenez la LiquidNation Team</h3>
+                    <p>Vos dons sur Tipeee permettent de financer le matériel des créateurs, d'organiser des tournois communautaires et de développer la structure e-sport.</p>
+                </div>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="https://fr.tipeee.com/liquidnation-team" target="_blank" class="btn-social btn-tipeee" style="padding: 1rem 2rem; font-size: 1.1rem;">
+                        <i class="fa-solid fa-heart"></i> Faire un don sur Tipeee
+                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- Sections Jeux / Rosters -->
+        <!-- Divisions Esport -->
         <section id="rosters">
             <div class="section-header">
                 <h2 class="section-title"><i class="fa-solid fa-gamepad"></i> Divisions E-sport & Jeux</h2>
@@ -371,51 +441,54 @@
                 
                 <div class="roster-card">
                     <h3>Brawl Stars</h3>
-                    <p><strong>Spécialisation :</strong> 3v3 & Showdown</p>
-                    <p><strong>Comptes :</strong> Main (19k+ Trophées) | Second (50k Trophées, Gloire Lunaire)</p>
-                    <p><strong>Main Tag :</strong> <code>#2LL090PLR</code></p>
+                    <p><strong>Spécialisation :</strong> Modes 3v3 & Showdown</p>
+                    <p><strong>Effectif :</strong> Main Account (19k+ Trophées) | Alt Account (50k Trophées, Gloire Lunaire)</p>
+                    <p><strong>Tag Officiel :</strong> <code>#2LL090PLR</code> | Pseudo : <code>code:liquidalex</code></p>
                 </div>
 
                 <div class="roster-card">
                     <h3>Stumble Guys</h3>
-                    <p><strong>Spécialisation :</strong> Custom Games & Protips</p>
-                    <p><strong>Format :</strong> Événements communautaires, compétitions de vitesse et 4 variantes du jeu.</p>
+                    <p><strong>Spécialisation :</strong> Speedrun (Protips) & Custom Games</p>
+                    <p><strong>Format :</strong> Organisation de salons communautaires en direct, tests de maps et défis techniques sur 4 variantes du jeu.</p>
                 </div>
 
                 <div class="roster-card">
                     <h3>Fortnite</h3>
-                    <p><strong>Spécialisation :</strong> Battle Royale & Zero Build</p>
-                    <p><strong>Format :</strong> Cartes créatives, Jam Stage et compétition grand public.</p>
+                    <p><strong>Spécialisation :</strong> Battle Royale, Zero Build & Créatif</p>
+                    <p><strong>Format :</strong> Sessions multi-joueurs, entrainements Jam Stage / Practice et compétitions grand public.</p>
                 </div>
 
                 <div class="roster-card">
                     <h3>Fall Guys</h3>
-                    <p><strong>Spécialisation :</strong> Épreuves de vitesse & Parcours</p>
-                    <p><strong>Format :</strong> Qualifiers, finales et cartes personnalisées.</p>
+                    <p><strong>Spécialisation :</strong> Parcours d'obstacles & Qualifiers</p>
+                    <p><strong>Format :</strong> Finales d'émissions, cartes personnalisées et sessions interactives avec le chat Twitch/YouTube.</p>
                 </div>
 
             </div>
         </section>
 
-        <!-- Article Présentation -->
+        <!-- Présentation Détaillée (Style Dossier de Presse / Wiki) -->
         <section id="about">
             <div class="section-header">
-                <h2 class="section-title"><i class="fa-solid fa-circle-info"></i> Présentation de la Structure</h2>
+                <h2 class="section-title"><i class="fa-solid fa-circle-info"></i> Organisation & Management</h2>
             </div>
-            <div class="article-box">
+            <div class="wiki-box">
                 
-                <h3>Origines et Management</h3>
-                <p>Fondée en 2024, la <strong>LiquidNation Team (LNT)</strong> est une organisation française spécialisée dans le sport électronique et la création de contenu vidéo. La gestion administrative, la planification stratégique et l'encadrement opérationnel sont assurés par la <strong>Focus Team</strong>, le pôle de management interne dirigé par <strong>Alexis B</strong>.</p>
+                <h3>Origines de la LNT</h3>
+                <p>Fondée en 2024, la <strong>LiquidNation Team (LNT)</strong> est une structure e-sportive et de création de contenu française. Conçue à l'origine pour fédérer des joueurs passionnés de jeux compétitifs mobiles et PC, l'organisation s'est rapidement développée pour couvrir un écosystème multi-plateformes complet.</p>
 
-                <h3>Modèle de Diffusion Hybride</h3>
-                <p>Afin d'optimiser sa présence sur les algorithmes et de proposer du contenu adapté à son audience, la LNT sépare ses flux de production en deux pôles distincts :</p>
+                <h3>Le Pôle de Direction : Focus Team</h3>
+                <p>L'encadrement opérationnel, la gestion des partenariats et la stratégie globale sont supervisés par la <strong>Focus Team</strong>, la cellule administrative dirigée par <strong>Alexis B</strong> (PDG). Ce pôle assure la coordination entre la production vidéo et le développement de la communauté.</p>
+
+                <h3>Stratégie de Contenu Hybride</h3>
+                <p>La LNT applique une ligne éditoriale structurée en deux pôles afin d'adapter sa visibilité selon les réseaux :</p>
                 <ul>
-                    <li><strong>Pôle principal :</strong> Consacré aux vidéos longues, aux émissions en direct et aux rediffusions de tournois.</li>
-                    <li><strong>Pôle secondaire :</strong> Axé sur le contenu court, les temps forts (highlights) et le format dynamique TikTok/Shorts.</li>
+                    <li><strong>Pôle Principal (YouTube / Twitch) :</strong> Vidéos au format long, analyses de gameplay, diffusions en direct et tournois.</li>
+                    <li><strong>Pôle Secondaire (TikTok / Shorts) :</strong> Contenus courts, highlights compétitifs, moments insolites et clips viraux.</li>
                 </ul>
 
-                <h3>Composition et Identités</h3>
-                <p>L'équipe regroupe 5 membres actifs et développe son réseau autour d'un écosystème multi-plateformes regroupant YouTube, Twitch, TikTok, Tipeee et un serveur Discord communautaire accessible via le portail officiel.</p>
+                <h3>Communauté & Membres</h3>
+                <p>La structure rassemble 5 membres officiels et s'appuie sur une communauté active réunie sur le serveur Discord officiel, où sont régulièrement organisées des parties personnalisées en live.</p>
 
             </div>
         </section>
@@ -423,10 +496,10 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 LiquidNation Team (LNT). Tous droits réservés. Géré par la Focus Team.</p>
+        <p>&copy; 2026 LiquidNation Team (LNT). Tous droits réservés. Administer par la Focus Team (Alexis B).</p>
     </footer>
 
-    <!-- Script Officiel Tipeee -->
+    <!-- Script Tipeee Optionnel -->
     <script async src="https://plugin.tipeee.com/widget.js" charset="utf-8"></script>
 </body>
 </html>
